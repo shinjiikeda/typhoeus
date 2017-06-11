@@ -121,7 +121,8 @@ module Faraday # :nodoc:
         opts = {
           :method => env[:method],
           :body => env[:body],
-          :headers => env[:request_headers]
+          :headers => env[:request_headers],
+          :accept_encoding => "gzip"
         }.merge(@adapter_options)
 
         ::Typhoeus::Request.new(env[:url].to_s, opts)
